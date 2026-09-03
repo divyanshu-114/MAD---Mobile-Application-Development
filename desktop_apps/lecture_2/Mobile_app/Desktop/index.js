@@ -1,17 +1,12 @@
-// const {app, BrowserWindow} = require('electron');
-
-import {app, BrowserWindow} from "electron";
+import { app, BrowserWindow } from 'electron'
 
 function createWindow() {
-    const window = new BrowserWindow({
-        width : 400,
-        height : 400
+    const win = new BrowserWindow({
+        width: 800,
+        height: 600,
     })
 
-    //window.webContents.openDevTools();
-
-    window.loadURL('http://localhost:5173/');
+    win.loadFile('../dist/index.html')
 }
-
 
 app.whenReady().then(createWindow)
